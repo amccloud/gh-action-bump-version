@@ -118,7 +118,7 @@ const workspace = process.env.GITHUB_WORKSPACE;
   console.log('version action after final decision:', version);
 
   // case: if nothing of the above matches
-  if (!version) {
+  if (version === 'false' || version === false) {
     exitSuccess('No version keywords found, skipping bump.');
     return;
   }
